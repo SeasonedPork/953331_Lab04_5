@@ -9,30 +9,43 @@
 </template>
 
 <script>
-import EventService from "@/service/EventService.js";
+import EventService from '@/service/EventService.js'
+
+var count = 0
+
 export default {
-  props: ["id"],
+  props: ['id'],
   data() {
     return {
-      event: null,
-    };
+      event: null
+    }
   },
   created() {
-    EventService.getEventsPassengers()
+    EventService.getEventsPass()
       .then((response) => {
         response.data.forEach((data) => {
           data.data.forEach((airline) => {
             if (airline._id == this.id) {
-              airline.airline.forEach((object) => {
-                this.event = object;
-              });
+              airline.airline.forEach((obj) => {
+                this.event = obj
+                count += 1
+              })
             }
-          });
-        });
+            if (
+              count + Object.keys(airline).length ==
+              Object.keys(airline).length
+            ) {
+              this.$router.push({
+                name: '404Resource',
+                params: { resource: this.id }
+              })
+            }
+          })
+        })
       })
       .catch((error) => {
-        console.log(error);
-      });
-  },
-};
+        console.log(error)
+      })
+  }
+}
 </script>
