@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <tr v-for="event in events" :key="event.id">
+      <h3>Total Passenger: {{ event.totalPassengers }}</h3>
+    </tr>
     <template v-for="item in events">
       <EventCard
         v-for="event in item.data"

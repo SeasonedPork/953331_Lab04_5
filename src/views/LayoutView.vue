@@ -1,14 +1,20 @@
 <template>
-  <div class="event">
-    <h1>Name: {{ event.name }}</h1>
-    <p>ID: {{ event._id }}</p>
-    <p>Trips: {{ event.trips }}</p>
-    <!-- air detail move to airline -->
+  <div class="home">
+    <p>id: {{ this.id }}</p>
+    <router-link :to="{ name: 'EventDetails', params: { id: this.id } }">
+      See Passenger Details
+    </router-link>
+    <router-link :to="{ name: 'AirlineDetails', params: { id: this.id } }">
+      Airline Details
+    </router-link>
   </div>
+  <router-view :event="event" />
 </template>
 
 <script>
+// @ is an alias to /src
 import EventService from "@/service/EventService.js";
+
 export default {
   props: ["id"],
   data() {
@@ -33,3 +39,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.home {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+</style>

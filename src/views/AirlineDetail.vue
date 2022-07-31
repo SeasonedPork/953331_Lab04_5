@@ -1,9 +1,10 @@
 <template>
-  <div class="event">
+  <div class="event" v-if="event">
+    <h3>{{ event.head_quaters }}</h3>
     <h1>Name: {{ event.name }}</h1>
-    <p>ID: {{ event._id }}</p>
-    <p>Trips: {{ event.trips }}</p>
-    <!-- air detail move to airline -->
+    <p>ID: {{ event.id }}</p>
+    <p>Website: {{ event.website }}</p>
+    <img :src="event.logo" alt="" />
   </div>
 </template>
 
@@ -19,10 +20,12 @@ export default {
   created() {
     EventService.getEventsPassengers()
       .then((response) => {
-        response.data.forEach((object) => {
-          object.data.forEach((object) => {
-            if (object._id == this.id) {
-              this.event = object;
+        response.data.forEach((data) => {
+          data.data.forEach((airline) => {
+            if (airline._id == this.id) {
+              airline.airline.forEach((object) => {
+                this.event = object;
+              });
             }
           });
         });
