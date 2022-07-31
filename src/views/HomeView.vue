@@ -15,29 +15,29 @@
 
 <script>
 // @ is an alias to /src
-import EventCard from '../components/EventCard.vue'
-import EventService from '@/services/EventService.js'
+import EventCard from "../components/EventCard.vue";
+import EventService from "@/services/EventService.js";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    EventCard
+    EventCard,
   },
   data() {
     return {
-      events: null
-    }
+      events: null,
+    };
   },
   created() {
     EventService.getEventsPass()
       .then((res) => {
-        this.events = res.data
+        this.events = res.data;
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
-}
+        console.log(err);
+      });
+  },
+};
 </script>
 <style scoped>
 .home {
