@@ -1,6 +1,8 @@
 <template>
   <div class="event-card">
-    <span>{{ event.name }}</span>
+    <router-link :to="{ name: 'EventDetails', params: { id: event._id } }">
+      <span>{{ event.name }}</span>
+    </router-link>
   </div>
 </template>
 <script>
