@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import EventDetails from '../views/EventDetailView.vue'
 import AirlineDetails from '../views/AirlineDetails.vue'
 import NotFoundView from '../views/event/NotFoundError.vue'
+import NotFoundResource from '../views/event/NotFoundResource.vue'
 
 const routes = [
   {
@@ -34,7 +35,7 @@ const routes = [
   {
     path: '/404/:resource',
     name: '404Resource',
-    component: NotFoundView,
+    component: NotFoundResource,
     props: true
   },
   {
