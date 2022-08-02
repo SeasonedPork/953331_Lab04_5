@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:3004",
+  baseURL: "https://api.instantwebtools.net/v1/passenger?page=0&size=10",
   withCredentials: false,
   headers: {
     Accept: "application/json",
