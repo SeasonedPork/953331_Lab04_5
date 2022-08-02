@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://api.instantwebtools.net/v1/passenger?page=0&size=10",
+  baseURL: "https://my-json-server.typicode.com/se331-2022/passengerdb",
   withCredentials: false,
   headers: {
     Accept: "application/json",
@@ -11,10 +11,13 @@ const apiClient = axios.create({
 
 export default {
   getEventsAirline() {
-    return apiClient.get("/airline");
+    return console.log("Airline processing"), apiClient.get("/airline");
   },
   //Added new call
-  getEventsPassengers() {
-    return apiClient.get("/passengers");
+  getEvents() {
+    return apiClient.get("/passenger?_page=1&_limit=5");
+  },
+  getEventPassenger(id) {
+    return apiClient.get("passenger/" + id);
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="event-card">
-    <span>{{ event.name }}</span>
+    <span>{{ event.first_name }} {{ event.ip_address }}</span>
   </div>
 </template>
 <script>

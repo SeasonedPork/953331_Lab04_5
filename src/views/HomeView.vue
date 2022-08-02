@@ -1,12 +1,10 @@
 <template>
   <div class="home">
-    <template v-for="item in events">
-      <EventCard
-        v-for="event in item.data"
-        :key="event.id"
-        :event="event"
-      ></EventCard>
-    </template>
+    <EventCard
+      v-for="event in events"
+      :key="event.id"
+      :event="event"
+    ></EventCard>
   </div>
 </template>
 
@@ -26,8 +24,9 @@ export default {
     };
   },
   created() {
-    EventService.getEventsPassengers()
+    EventService.getEvents()
       .then((response) => {
+        console.log(response.data);
         this.events = response.data;
       })
       .catch((error) => {
