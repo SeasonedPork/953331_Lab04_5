@@ -18,8 +18,8 @@ export default {
   },
   created() {
     console.log(this.id);
-    EventService.getEventsPassenger(this.id)
-      .then((response) => {
+    EventService.getEvents()
+       .then((response) => {
         console.log(response.data);
         this.events = response.data;
       })
