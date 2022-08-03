@@ -16,7 +16,7 @@ import EventService from "@/service/EventService.js";
 export default {
   name: "HomeView",
   components: {
-    EventCard,
+    EventCard
   },
   data() {
     return {

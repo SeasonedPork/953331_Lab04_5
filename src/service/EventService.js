@@ -18,6 +18,6 @@ export default {
     return apiClient.get("/passenger?_page=1&_limit=5");
   },
   getEventsPassenger(id) {
-    return apiClient.get("passenger/" + id);
+    return apiClient.get("/passenger/" + id), console.log(id);
   },
 };
