@@ -1,9 +1,9 @@
 <template>
   <div class="event">
     <h1>Name: {{ events.first_name }}</h1>
-    <!-- <h1>{{ event.last_name }}</h1>
-    <p>ID: {{ event._id }}</p>
-    <p>Trips: {{ event.trips }}</p> -->
+    <h1>{{ events.last_name }}</h1>
+    <p>ID: {{ events._id }}</p>
+    <p>Trips: {{ events.trips }}</p>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
     EventService.getEventsPassenger(this.id)
       .then((response) => {
         console.log(response.data);
-        this.event = response.data;
+        this.events = response.data;
       })
       .catch((error) => {
         console.log(error);

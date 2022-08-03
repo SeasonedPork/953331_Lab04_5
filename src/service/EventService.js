@@ -11,13 +11,13 @@ const apiClient = axios.create({
 
 export default {
   getEventsAirline() {
-    return console.log("Airline processing"), apiClient.get("/airline");
+    return apiClient.get("/airline");
   },
   //Added new call
   getEvents() {
     return apiClient.get("/passenger?_page=1&_limit=5");
   },
   getEventsPassenger(id) {
-    return apiClient.get("/passenger/" + id), console.log(id);
+    return apiClient.get("/passenger/" + id);
   },
 };
