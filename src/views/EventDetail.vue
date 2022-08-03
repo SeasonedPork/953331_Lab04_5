@@ -10,7 +10,7 @@
 <script>
 import EventService from "@/service/EventService.js";
 export default {
-  props: ['id'],
+  props: ["id"],
   data() {
     return {
       events: null,
@@ -18,10 +18,10 @@ export default {
   },
   created() {
     console.log(this.id);
-    EventService.getEvents()
-       .then((response) => {
+    EventService.getEventsPassenger(this.id)
+      .then((response) => {
         console.log(response.data);
-        this.events = response.data;
+        this.event = response.data;
       })
       .catch((error) => {
         console.log(error);
