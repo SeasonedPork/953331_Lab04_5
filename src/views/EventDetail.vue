@@ -1,8 +1,7 @@
 <template>
   <div class="event">
-    <h1>Name: {{ events.first_name }}</h1>
-    <h1>{{ events.last_name }}</h1>
-    <p>ID: {{ events._id }}</p>
+    <h1>Name: {{ events.first_name }}  {{ events.last_name }}</h1>
+    <h1>ID: {{ events.id }}</h1>
     <p>Trips: {{ events.trips }}</p>
   </div>
 </template>
