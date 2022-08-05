@@ -5,6 +5,7 @@ import EventLayoutView from "../views/EventLayoutView.vue";
 import AirlineDetails from "../views/event/AirlineDetail.vue";
 import NetworkErrorView from "@/views/NetworkError.vue";
 import NotFound from "@/views/NotFound.vue";
+import RegisterView from "@/views/event/RegisterView.vue";
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
         path: "airline",
         name: "AirlineDetail",
         component: AirlineDetails,
+        props: true,
+      },
+      {
+        path: "register",
+        name: "RegisterView",
+        component: RegisterView,
         props: true,
       },
     ],

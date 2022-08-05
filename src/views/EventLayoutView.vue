@@ -5,9 +5,9 @@
         Passengers Details</router-link
       >
       |
-      <router-link :to="{ name: 'AirlineDetail', params: { id } }">
-        Airline Details</router-link
-      >
+      <router-link :to="{ name: 'RegisterView', params: { id } }">
+        Register
+      </router-link>
     </div>
     <router-view :event="event" />
   </div>
