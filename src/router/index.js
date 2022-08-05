@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import EventDetail from "../views/event/EventDetail.vue";
 import EventLayoutView from "../views/EventLayoutView.vue";
 import AirlineDetails from "../views/event/AirlineDetail.vue";
+import NetworkErrorView from "@/views/NetworkError.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const routes = [
   {
@@ -33,11 +35,27 @@ const routes = [
       },
       {
         path: "airline",
-        name: "AirlineDetails",
+        name: "AirlineDetail",
         component: AirlineDetails,
         props: true,
       },
     ],
+  },
+  {
+    path: "/404/:resource",
+    name: "404Resource",
+    component: NotFound,
+    props: true,
+  },
+  {
+    path: "/.catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
+  },
+  {
+    path: "/network-error",
+    name: "NetworkError",
+    component: NetworkErrorView,
   },
 ];
 
