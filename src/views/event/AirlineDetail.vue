@@ -1,7 +1,9 @@
 <template>
-  <p>Airline : {{ event.airlineId }}</p>
-  <p>Travel Date : {{ event.travelDate }}</p>
-  <p>Source : {{ event.Source }}</p>
+  <div v-if="event">
+    <p>Airline : {{ event.airlineId }}</p>
+    <p>Travel Date : {{ event.travelDate }}</p>
+    <p>Source : {{ event.Source }}</p>
+  </div>
 </template>
 
 <script>
