@@ -23,10 +23,9 @@ export default {
     };
   },
   created() {
-    EventService.getEvents(this.id)
+    EventService.getEventsPassenger(this.id)
       .then((response) => {
         this.event = response.data;
-        console.log(response.data);
       })
       .catch((error) => {
         if (error.response && error.response.status == 404) {
