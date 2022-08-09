@@ -21,11 +21,10 @@ export default {
       setTimeout(() => {
         //after 3 second remove it
         this.GStore.flashMessage = "";
-      }, 3000);
+      }, 5000);
 
       this.$router.push({
-        name: "EventDetails",
-        params: { id: this.event.id },
+        name: "home",
       });
     },
   },

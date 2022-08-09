@@ -3,6 +3,7 @@
     <p>Name : {{ event.first_name }} {{ event.last_name }}</p>
     <p>Id : {{ event.id }}</p>
     <p>Destination : {{ event.Destination }}</p>
+    <button @click="register">Register Me</button>
   </div>
 </template>
 
