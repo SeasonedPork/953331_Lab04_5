@@ -9,6 +9,18 @@
 
 <script>
 export default {
-  props: ["event"],
+  props: ["event","id"],
+  inject:["GStore"],
+  methods: {
+    Edit() {
+      this.GStore.flashMessage = 
+      'You are succesfully Edited ' + this.event.title + ' page'
+    },
+    beforeRouteEnter (routeTo, routeFrom, next) {
+      // ...
+    }
+  }
 };
+
+
 </script>

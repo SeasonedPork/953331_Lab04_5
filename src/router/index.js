@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import EventList from "../views/EventListView.vue";
 import EventDetail from "../views/event/EventDetail.vue";
 import EventLayoutView from "../views/EventLayoutView.vue";
 import AirlineDetails from "../views/event/AirlineDetail.vue";
@@ -11,7 +11,7 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: EventList,
   },
   {
     path: "/about",
