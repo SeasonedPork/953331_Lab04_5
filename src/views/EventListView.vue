@@ -23,16 +23,30 @@ export default {
       events: null,
     };
   },
-  created() {
-    EventService.getEvents()
+  //eslint-disable-next-line no-unused-vars
+  beforeRouteEnter (routeTo, routeFrom, next) {
+    EventService.getEvents(2,parseInt(routeTo.query.page) || 1)
       .then((response) => {
-        console.log(response.data);
-        this.events = response.data;
+        next((comp) => { 
+        comp.events = response.data;
+        comp.totalEvents = response.headers['x-total-count']})
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(() => {
+        next({ name: 'NetworkError'})
+      })
   },
+   beforeRouteUpdate (routeTo, routeFrom, next) {
+    EventService.getEvents(2,parseInt(routeTo.query.page) || 1)
+      .then((response) => {
+        this.events = response.data;
+        this.totalEvents = response.headers['x-total-count'] 
+        next() //<-----
+      })
+      .catch(() => {
+        next({ name: 'NetworkError'})
+      })
+  },
+
 };
 </script>
 <style scoped>
